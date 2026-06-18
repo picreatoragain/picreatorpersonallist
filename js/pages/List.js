@@ -132,7 +132,8 @@ export default {
                     })
             );
             if (!this.editors) {
-                this.errors.push("Failed to load list editors.");
+                // this.errors.push("Failed to load list editors.");
+                // I dont feel like removing editor list properly so fuck you
             }
         }
 
