@@ -50,6 +50,10 @@ export default {
                             <div class="type-title-sm">Tags</div>
                             <p>{{ level.tags }}</p>
                         </li>
+                         <li>
+                            <div class="type-title-sm">Attempts</div>
+                            <p>{{ level.attempts }}</p>
+                        </li>
                     </ul>
                 </div>
                 <div v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
