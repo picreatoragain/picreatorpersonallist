@@ -162,7 +162,7 @@ export default {
         if (!this.level) return;
         try {
             const response = await fetch(
-                `https://gdladder.com/api/level/${this.level.id}`,
+                `http://gdladder.com/api/level/${this.level.id}`,
                 {
                     headers: {
                         "Accept": "application/json"
