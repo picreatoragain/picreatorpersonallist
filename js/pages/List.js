@@ -54,6 +54,10 @@ export default {
                             <div class="type-title-sm">Attempts</div>
                             <p>{{ level.attempts }}</p>
                         </li>
+                         <li>
+                            <div class="type-title-sm">GDDL Tier</div>
+                            <p>{{ gddlTier ?? "Not a rated level" }}</p>
+                        </li>
                     </ul>
                 </div>
                 <div v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
@@ -97,6 +101,7 @@ export default {
         editors: [],
         loading: true,
         selected: 0,
+        gddlTier: null,
         errors: [],
         roleIconMap,
         store
@@ -104,6 +109,11 @@ export default {
     computed: {
         level() {
             return this.list[this.selected][0];
+        },
+    watch: {
+    selected() {
+        this.fetchGDDLTier();
+            }
         },
         video() {
             if (!this.level.showcase) {
@@ -137,14 +147,34 @@ export default {
             );
             if (!this.editors) {
                 // this.errors.push("Failed to load list editors.");
-                // I dont feel like removing editor list properly so fuck you
+                // I dont feel like removing the editor list properly so fuck you
             }
         }
 
         this.loading = false;
+        await this.fetchGDDLTier();
     },
     methods: {
         embed,
         score,
+        async fetchGDDLTier() {
+        this.gddlTier = null;
+        if (!this.level) return;
+        try {
+            const response = await fetch(
+                `https://gdladder.com/api/level/${this.level.id}`,
+                {
+                    headers: {
+                        "Accept": "application/json"
+                    }
+                }
+            );
+            if (!response.ok) return;
+            const data = await response.json();
+            this.gddlTier = data.tier;
+        } catch (e) {
+            console.error(e);
+        }
+    }
     },
 };
