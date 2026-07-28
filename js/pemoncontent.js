@@ -6,7 +6,7 @@ import { round, score } from './score.js';
 const dir = '/pemondata';
 
 export async function fetchList() {
-    const listResult = await fetch(`${dir}/_Pemonlist.json`);
+    const listResult = await fetch(`${dir}/_pemonlist.json`);
     try {
         const list = await listResult.json();
         return await Promise.all(
