@@ -186,9 +186,9 @@ export default {
                 video: lvl.verification,
             }));
             const list = [];
-            if (this.useMainList) list.push(...fullListMapped.slice(0, 42));
+            if (this.useMainList) list.push(...fullListMapped.slice(0, 40));
             if (this.useExtendedList) {
-                list.push(...fullListMapped.slice(35, 150));
+                list.push(...fullListMapped.slice(40, 150));
             }
 
             // random 100 levels
