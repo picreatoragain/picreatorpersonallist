@@ -89,7 +89,21 @@ main > div {
     justify-content: center;
     grid-column: span 3;
 }
+.skillset {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0 18px;
+}
 
+.skill {
+    display: inline-block;
+    padding: 5px 9px;
+    border: 1px solid #666;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 1.2;
+}
 input[type="checkbox"] {
     height: 1.25rem;
     width: 1.25rem;
