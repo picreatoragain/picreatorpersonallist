@@ -5,20 +5,11 @@
     "verification": "https://youtu.be/I6zjfRA4RT0?si=mT_wfP7rkXJbJGmu",
     "tags": "Hardest Completion, 2.0, Long, Hateable",
     "difficulty": "Easy NLW",
-        "skillset": [
-    {
-        "name": "Ship",
-        "description": "Extreme demons that have most of their difficulty in the ship gamemode."
-    },
-        {
-        "name": "Unbalanced",
-        "description": "The difficulty in this level is NOT consistent."
-    },
-    {
-        "name": "Fast-Paced",
-        "description": "Most of this levels gameplay is really fast."
-    }
-    ],
+"skillset": [
+    "Ship",
+    "Unbalanced",
+    "Fast-Paced"
+]
     "attempts": "4665",
     "records": [{}]
 }
