@@ -44,13 +44,13 @@ export default {
 <div class="skillset" v-if="level.skillset">
     <span
         v-for="skill in level.skillset"
-        :key="skill.name"
+        :key="skill"
         class="skill"
     >
-        {{ skill.name }}
+        {{ skill }}
 
         <span class="skill-tooltip">
-            {{ skill.description }}
+            {{ skillDescriptions[skill] }}
         </span>
     </span>
 </div>
