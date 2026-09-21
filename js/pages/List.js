@@ -109,7 +109,7 @@ export default {
             </div>
         </main>
     `,
-     => ({
+    data() ({
     list: [],
     editors: [],
     loading: true,
