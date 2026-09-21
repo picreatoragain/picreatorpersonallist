@@ -3,18 +3,12 @@
     "name": "Red World Rebirth",
     "author": "Riot",
     "verification": "https://youtu.be/23eqmM4EIe0?si=oyXH3fqPqwyR2zF9",
-    "tags": "Former Hardest, 2.0",
+    "tags": "Former Hardest, 2.0, Long",
     "difficulty": "Easy NLW",
-        "skillset": [
-    {
-        "name": "Ship",
-        "description": "Extreme demons that have most of their difficulty in the ship gamemode."
-    },
-        {
-        "name": "Slow-Paced",
-        "description": "Most of this levels gameplay is slow."
-        }
-    ],
+"skillset": [
+    "Ship",
+    "Slow-Paced"
+],
     "attempts": "4483",
     "records": [{}]
 }
