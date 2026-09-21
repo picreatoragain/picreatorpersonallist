@@ -110,13 +110,14 @@ export default {
         </main>
     `,
      => ({
-        list: [],
-        editors: [],
-        loading: true,
-        selected: 0,
-        errors: [],
-        roleIconMap,
-        store
+    list: [],
+    editors: [],
+    loading: true,
+    selected: 0,
+    errors: [],
+    roleIconMap,
+    store,
+    skillDescriptions
     }),
     computed: {
         level() {
