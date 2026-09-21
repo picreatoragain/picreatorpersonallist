@@ -109,16 +109,19 @@ export default {
             </div>
         </main>
     `,
-    data() ({
-    list: [],
-    editors: [],
-    loading: true,
-    selected: 0,
-    errors: [],
-    roleIconMap,
-    store,
-    skillDescriptions
-    }),
+    data() {
+    return {
+        list: [],
+        editors: [],
+        loading: true,
+        selected: 0,
+        errors: [],
+        roleIconMap,
+        store,
+        skillDescriptions,
+        toggledShowcase: false
+    };
+},
     computed: {
         level() {
             return this.list[this.selected][0];
