@@ -97,6 +97,7 @@ main > div {
 }
 
 .skill {
+        font: inherit;
     display: inline-block;
     padding: 5px 9px;
     border: 1px solid #666;
