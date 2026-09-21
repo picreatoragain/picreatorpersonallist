@@ -93,17 +93,61 @@ main > div {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin: 12px 0 18px;
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 
 .skill {
-        font: inherit;
+    position: relative;
     display: inline-block;
-    padding: 5px 9px;
-    border: 1px solid #666;
+    padding: 5px 8px;
+    border: 1px solid #555;
     border-radius: 8px;
     font-size: 16px;
-    line-height: 1.2;
+    cursor: help;
+}
+
+.skill-tooltip {
+    position: absolute;
+    z-index: 100;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: max-content;
+    max-width: 300px;
+
+    padding: 7px 10px;
+    border-radius: 6px;
+
+    background: #111;
+    color: white;
+    border: 1px solid #555;
+
+    font-size: 14px;
+    line-height: 1.3;
+
+    visibility: hidden;
+    opacity: 0;
+
+    transition: opacity 0.15s ease;
+    pointer-events: none;
+}
+.skill-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.skill:hover .skill-tooltip {
+    visibility: visible;
+    opacity: 1;
 }
 input[type="checkbox"] {
     height: 1.25rem;
