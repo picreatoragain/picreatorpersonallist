@@ -41,15 +41,19 @@ export default {
                     <h1>{{ level.name }}</h1>
                     <h2> Published by {{ level.author }}</h2>
                     <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
-                    <div class="skillset" v-if="level.skillset">
-                <span
-                    v-for="skill in level.skillset"
-                    :key="skill"
-                    class="skill"
-                     >
-                    {{ skill }}
-                </span>
-                    </div>
+<div class="skillset" v-if="level.skillset">
+    <span
+        v-for="skill in level.skillset"
+        :key="skill.name"
+        class="skill"
+    >
+        {{ skill.name }}
+
+        <span class="skill-tooltip">
+            {{ skill.description }}
+        </span>
+    </span>
+</div>
                     <ul class="stats">
                         <li>
                             <div class="type-title-sm">ID</div>
