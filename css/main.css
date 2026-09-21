@@ -90,6 +90,7 @@ main > div {
     grid-column: span 3;
 }
 .skillset {
+    z-index: 10000;
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
@@ -98,6 +99,7 @@ main > div {
 }
 
 .skill {
+    z-index: 10000;
     position: relative;
     display: inline-block;
     padding: 5px 8px;
