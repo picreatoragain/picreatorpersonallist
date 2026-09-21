@@ -1,12 +1,4 @@
 import { round, score } from './score.js';
-const skillDescriptions = {
-    "Long": "The level has a long duration.",
-    "Ship": "The level contains significant ship gameplay.",
-    "Chokepoints": "The level contains difficult sections where small mistakes are heavily punished.",
-    "Slow-Paced": "The level generally uses slower gameplay.",
-    "2.0": "Extreme demons released in update 2.0",
-    "Old Swing": "The level uses the older swing gameplay style."
-};
 /**
  * Path to directory containing `_list.json` and all levels
  */
