@@ -6,8 +6,10 @@
     "tags": "Hardest Completion, 2.0, Hateable",
     "difficulty": "Easy NLW",
         "skillset": [
-        "Being Terrible",
-            "Test Test Test Sahur"
+    {
+        "name": "Being Terrible",
+        "description": "This level sucks."
+    }
     ],
     "attempts": "4665",
     "records": [{}]
