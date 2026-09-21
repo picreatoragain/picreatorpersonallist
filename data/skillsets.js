@@ -7,5 +7,6 @@ export default {
     Duals: "The worst gamemode.",
     "Fast-Paced": "Most of this levels gameplay/difficulty is in fast parts.",
     "Slow-Paced": "Most of this levels gameplay/difficulty is in slow parts.",
+    "Nerve Control": "Long + Intense equals sweat.",
     Timings: "Levels that want you to do precise timings NOW!!!!!"
 };
