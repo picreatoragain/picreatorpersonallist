@@ -23,13 +23,13 @@ export async function fetchList() {
                         },
                         null,
                     ];
-                } catch {
+                } catch (err){
                   console.error(`Failed to load level #${rank + 1} ${path}:`, err);
                     return [null, path];
                 }
             }),
         );
-    } catch {
+    } catch (err){
         console.error("Failed to load list:", err);
         return null;
     }
