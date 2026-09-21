@@ -9,6 +9,14 @@
     {
         "name": "Ship",
         "description": "Extreme demons that have most of their difficulty in the ship gamemode."
+    },
+        {
+        "name": "Chokepoints",
+        "description": "Certain sections in this level are way harder then the rest and commonly cause deaths."
+    },
+    {
+        "name": "Fast-Paced",
+        "description": "Most of this levels gameplay is really fast."
     }
     ],
     "attempts": "4665",
