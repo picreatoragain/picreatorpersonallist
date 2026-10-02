@@ -8,7 +8,7 @@ export default {
     "Frame Perfects": "Levels with clicks that require less then 17ms of error to pull off.",
     Duals: "The worst gamemode.",
     Memory: "The worst gameplay.",
-    Learny: "Levels with generally easier gameplay that takes a bit more time to learn click patterns and other Smartfella things.",
+    Learny: "Levels with generally easier gameplay that takes a bit more time to learn things like click patterns and other Smartfella things.",
     "Take a WILD guess": "Its wave.",
     "Fast-Paced": "Most of this levels gameplay/difficulty is in fast parts.",
     "Slow-Paced": "Most of this levels gameplay/difficulty is in slow parts.",
