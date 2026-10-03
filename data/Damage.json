@@ -6,9 +6,9 @@
     "tags": "Long",
     "attempts": "132",
     "difficulty": "High Hard Demon",
-   "skillset": [ 
-    "Clicksync",
-    "Timings"
+   "skillset": [
+           "Timings",
+    "Clicksync"
 ],
     "records": [{}]
 }
