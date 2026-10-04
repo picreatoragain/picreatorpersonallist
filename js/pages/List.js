@@ -101,7 +101,7 @@ export default {
                         v-if="level.skillset"
                     >
                         <span
-                            v-for="skill in level.skillset"
+                            v-for="skill in sortedSkillset"
                             :key="skill"
                             class="skill"
                         >
@@ -281,6 +281,16 @@ export default {
             return this.list?.[this.selected]?.[0] || null;
         },
 
+            sortedSkillset() {
+        if (!this.level?.skillset) {
+            return [];
+        }
+
+        return [...this.level.skillset].sort((a, b) =>
+            a.localeCompare(b)
+        );
+    },
+        
         video() {
             if (!this.level) {
                 return "";
