@@ -1,3 +1,4 @@
+
 import { store } from "../main.js";
 import { embed } from "../util.js";
 import { score } from "../score.js";
@@ -23,70 +24,62 @@ export default {
         </main>
 
         <main v-else class="page-list">
-<div
-    class="selected-background"
-:style="level ? {
-    backgroundImage:
-        'url(https://levelthumbs.prevter.me/thumbnail/' + level.id + '), url(/dog.png)'
-} : {
-    backgroundImage: 'url(/dog.png)'
-}"
+            <div
+                class="selected-background"
+                :style="level ? {
+                    backgroundImage:
+                        'url(https://levelthumbs.prevter.me/thumbnail/' + level.id + '), url(/dog.png)'
+                } : {
+                    backgroundImage: 'url(/dog.png)'
+                }"
+            ></div>
 
-></div>
+            <div class="selected-background-overlay"></div>
 
-<div class="selected-background-overlay"></div>
             <div class="list-container">
-<table class="list" v-if="list">
-    <tr
-        v-for="([level, err], i) in list"
-        :key="i"
-    >
-        <td
-            class="level"
-            :class="{
-                active: selected === i,
-                error: !level
-            }"
-:style="level ? {
-    backgroundImage:
-        'url(https://levelthumbs.prevter.me/thumbnail/' + level.id + '), url(/dog.png)'
-} : {
-    backgroundImage: 'url(/dog.png)'
-}"
-        >
-            <button @click="selected = i">
+                <table class="list" v-if="list">
+                    <tr
+                        v-for="([level, err], i) in list"
+                        :key="i"
+                    >
+                        <td
+                            class="level"
+                            :class="{
+                                active: selected === i,
+                                error: !level
+                            }"
+                            :style="level ? {
+                                backgroundImage:
+                                    'url(https://levelthumbs.prevter.me/thumbnail/' + level.id + '), url(/dog.png)'
+                            } : {
+                                backgroundImage: 'url(/dog.png)'
+                            }"
+                        >
+                            <button @click="selected = i">
+                                <span class="rank">
+                                    <template v-if="i + 1 <= 150">
+                                        #{{ i + 1 }}
+                                    </template>
+                                    <template v-else>
+                                        Legacy
+                                    </template>
+                                </span>
 
-                <span class="rank">
-                    <template v-if="i + 1 <= 150">
-                        #{{ i + 1 }}
-                    </template>
-
-                    <template v-else>
-                        Legacy
-                    </template>
-                </span>
-
-                <span class="level-name">
-                    {{ level?.name || 'Error (' + err + '.json)' }}
-                </span>
-
-            </button>
-        </td>
-    </tr>
-</table>
-
+                                <span class="level-name">
+                                    {{ level?.name || 'Error (' + err + '.json)' }}
+                                </span>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
             </div>
 
             <!-- LEVEL DETAILS -->
             <div class="level-container">
-
                 <div class="level" v-if="level">
-
                     <h1>{{ level.name }}</h1>
 
-                    <h2>
-                        Published by {{ level.author }}
-                    </h2>
+                    <h2>Published by {{ level.author }}</h2>
 
                     <iframe
                         class="video"
@@ -94,70 +87,59 @@ export default {
                         :src="video"
                         frameborder="0"
                     ></iframe>
+
+                    <!-- SKILLSET -->
                     <div
                         class="skillset"
-                        v-if="level.skillset"
+                        v-if="level.skillset && level.skillset.length"
                     >
-<span
-    v-for="skill in sortedSkillset"
-    :key="skill"
-    class="skill"
->
-    <img
-        v-if="skill === 'dog'"
-        src="/dog.png"
-        alt="dog"
-        class="skill-image"
-    >
-    <template v-else>
-        {{ skill }}
+                        <span
+                            v-for="skill in sortedSkillset"
+                            :key="skill"
+                            class="skill"
+                            :class="{ 'dog-skill': skill === 'dog' }"
+                        >
+                            <!-- Dog image -->
+                            <img
+                                v-if="skill === 'dog'"
+                                src="/dog.png"
+                                alt="dog"
+                                class="skill-image"
+                            />
 
-        <span class="skill-tooltip">
-            {{ skillDescriptions[skill] }}
-        </span>
-    </template>
+                            <!-- Regular skill name -->
+                            <template v-else>
+                                {{ skill }}
+                            </template>
+
+                            <!-- Tooltip works for BOTH text and image -->
+                            <span class="skill-tooltip">
+                                {{ skillDescriptions[skill] || 'A mysterious skill.' }}
+                            </span>
                         </span>
                     </div>
 
                     <!-- STATS -->
                     <ul class="stats">
-
                         <li>
-                            <div class="type-title-sm">
-                                ID
-                            </div>
-                            <p>
-                                {{ level.id }}
-                            </p>
+                            <div class="type-title-sm">ID</div>
+                            <p>{{ level.id }}</p>
                         </li>
 
                         <li>
-                            <div class="type-title-sm">
-                                Tags
-                            </div>
-                            <p>
-                                {{ level.tags }}
-                            </p>
+                            <div class="type-title-sm">Tags</div>
+                            <p>{{ level.tags }}</p>
                         </li>
 
                         <li>
-                            <div class="type-title-sm">
-                                Attempts
-                            </div>
-                            <p>
-                                {{ level.attempts }}
-                            </p>
+                            <div class="type-title-sm">Attempts</div>
+                            <p>{{ level.attempts }}</p>
                         </li>
 
                         <li>
-                            <div class="type-title-sm">
-                                Difficulty Opinion
-                            </div>
-                            <p>
-                                {{ level.difficulty }}
-                            </p>
+                            <div class="type-title-sm">Difficulty Opinion</div>
+                            <p>{{ level.difficulty }}</p>
                         </li>
-
                     </ul>
                 </div>
 
@@ -165,24 +147,15 @@ export default {
                 <div
                     v-else
                     class="level"
-                    style="
-                        height: 100%;
-                        justify-content: center;
-                        align-items: center;
-                    "
+                    style="height: 100%; justify-content: center; align-items: center;"
                 >
-                    <p>
-                        (ノಠ益ಠ)ノ彡┻━┻
-                    </p>
+                    <p>(ノಠ益ಠ)ノ彡┻━┻</p>
                 </div>
-
             </div>
 
             <!-- META -->
             <div class="meta-container">
-
                 <div class="meta">
-
                     <!-- ERRORS -->
                     <div
                         class="errors"
@@ -212,13 +185,9 @@ export default {
 
                     <!-- EDITORS -->
                     <template v-if="editors">
-
-                        <h3>
-                            List Editors
-                        </h3>
+                        <h3>List Editors</h3>
 
                         <ol class="editors">
-
                             <li
                                 v-for="editor in editors"
                                 :key="editor.name"
@@ -226,7 +195,7 @@ export default {
                                 <img
                                     :src="\`/assets/\${roleIconMap[editor.role]}\${store.dark ? '-dark' : ''}.svg\`"
                                     :alt="editor.role"
-                                >
+                                />
 
                                 <a
                                     v-if="editor.link"
@@ -237,34 +206,22 @@ export default {
                                     {{ editor.name }}
                                 </a>
 
-                                <p v-else>
-                                    {{ editor.name }}
-                                </p>
-
+                                <p v-else>{{ editor.name }}</p>
                             </li>
-
                         </ol>
-
                     </template>
 
                     <!-- NOTES -->
-                    <h3>
-                        Notes and info.
-                    </h3>
+                    <h3>Notes and info.</h3>
 
                     <p>
                         Some demon levels ive beaten (poltergeist) I dont
                         have video recordings for so I just use a showcase.
                     </p>
 
-                    <p>
-                        The niche memes are mainstream.
-                    </p>
-
+                    <p>The niche memes are mainstream.</p>
                 </div>
-
             </div>
-
         </main>
     `,
 
@@ -287,16 +244,16 @@ export default {
             return this.list?.[this.selected]?.[0] || null;
         },
 
-            sortedSkillset() {
-        if (!this.level?.skillset) {
-            return [];
-        }
+        sortedSkillset() {
+            if (!this.level?.skillset) {
+                return [];
+            }
 
-        return [...this.level.skillset].sort((a, b) =>
-            a.localeCompare(b)
-        );
-    },
-        
+            return [...this.level.skillset].sort((a, b) =>
+                a.localeCompare(b)
+            );
+        },
+
         video() {
             if (!this.level) {
                 return "";
@@ -315,33 +272,31 @@ export default {
     },
 
     async mounted() {
-        // Fetch list
-        this.list = await fetchList();
+        try {
+            this.list = await fetchList();
+            this.editors = await fetchEditors();
 
-        // Fetch editors
-        this.editors = await fetchEditors();
-
-        // Error handling
-        if (!this.list) {
-            this.errors = [
-                "wakeup picreator bro.",
-            ];
-        } else {
-            this.errors.push(
-                ...this.list
-                    .filter(([_, err]) => err)
-                    .map(([_, err]) => {
-                        return `Failed to load level. (${err}.json)`;
-                    })
-            );
+            if (!this.list) {
+                this.errors.push("wakeup picreator bro.");
+            } else {
+                this.errors.push(
+                    ...this.list
+                        .filter(([_, err]) => err)
+                        .map(([_, err]) =>
+                            `Failed to load level. (${err}.json)`
+                        )
+                );
+            }
 
             if (!this.editors) {
-                // this.errors.push("Failed to load list editors.");
-                // I dont feel like removing editor list properly so fuck you
+                this.editors = [];
             }
+        } catch (error) {
+            console.error("Failed to initialize list:", error);
+            this.errors.push("Failed to load list data.");
+        } finally {
+            this.loading = false;
         }
-
-        this.loading = false;
     },
 
     methods: {
