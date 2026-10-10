@@ -1,6 +1,7 @@
 export default {
     Ship: "Levels with alot of the difficulty in the ship sections.",
     Ufo: "Levels with alot of the difficulty in the ufo sections.",
+    Dog: "https://cdn.discordapp.com/emojis/1555379867128700938.webp?size=56",
     Wave: "Levels with alot of the difficulty in the wave sections.",
     Cube: "Levels with alot of the difficulty in the cube sections.",
     Spider: "Levels that SOMEHOW have alot of the difficulty in the spider sections.",
