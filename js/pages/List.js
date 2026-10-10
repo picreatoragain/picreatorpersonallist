@@ -94,29 +94,29 @@ export default {
                         :src="video"
                         frameborder="0"
                     ></iframe>
-
-                    <!-- SKILLSET -->
                     <div
                         class="skillset"
                         v-if="level.skillset"
                     >
-                    // holy hardcode
-                     <img
-                        v-if="skill === 'Dog'"
-                        src="/dog.png"
-                        alt="dog"
-                        class="skill-image"
-                      >
-                        <span
-                            v-for="skill in sortedSkillset"
-                            :key="skill"
-                            class="skill"
-                        >
-                            {{ skill }}
+<span
+    v-for="skill in sortedSkillset"
+    :key="skill"
+    class="skill"
+>
+    <img
+        v-if="skill === 'dog'"
+        src="/dog.png"
+        alt="dog"
+        class="skill-image"
+    >
+    <template v-else>
+        {{ skill }}
 
-                            <span class="skill-tooltip">
-                                {{ skillDescriptions[skill] }}
-                            </span>
+        <span class="skill-tooltip">
+            {{ skillDescriptions[skill] }}
+        </span>
+    </template>
+</span>
                         </span>
                     </div>
 
