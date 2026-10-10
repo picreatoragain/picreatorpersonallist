@@ -12,7 +12,12 @@ header {
     position: relative;
     z-index: 100;
 }
-
+.skill-image {
+    display: block;
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
 .selected-background {
     position: fixed;
     z-index: -2;
