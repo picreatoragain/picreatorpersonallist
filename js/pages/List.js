@@ -116,7 +116,6 @@ export default {
             {{ skillDescriptions[skill] }}
         </span>
     </template>
-</span>
                         </span>
                     </div>
 
