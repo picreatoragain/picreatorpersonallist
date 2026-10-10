@@ -97,11 +97,11 @@ export default {
                             v-for="skill in sortedSkillset"
                             :key="skill"
                             class="skill"
-                            :class="{ 'dog-skill': skill === 'dog' }"
+                            :class="{ 'dog-skill': skill === 'Dog' }"
                         >
                             <!-- Dog image -->
                             <img
-                                v-if="skill === 'dog'"
+                                v-if="skill === 'Dog'"
                                 src="/dog.png"
                                 alt="dog"
                                 class="skill-image"
@@ -114,7 +114,7 @@ export default {
 
                             <!-- Tooltip works for BOTH text and image -->
                             <span class="skill-tooltip">
-                                {{ skillDescriptions[skill] || 'A mysterious skill.' }}
+                                {{ skillDescriptions[skill] || 'picreator why the fuck didnt you type in a skillset description' }}
                             </span>
                         </span>
                     </div>
