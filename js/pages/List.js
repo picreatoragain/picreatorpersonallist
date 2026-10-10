@@ -100,6 +100,13 @@ export default {
                         class="skillset"
                         v-if="level.skillset"
                     >
+                    // holy hardcode
+                     <img
+                        v-if="skill === 'Dog'"
+                        src="/dog.png"
+                        alt="dog"
+                        class="skill-image"
+                      >
                         <span
                             v-for="skill in sortedSkillset"
                             :key="skill"
