@@ -7,6 +7,7 @@ export default {
     Unbalanced: "The difficulty in this level is NOT consistent.",
     Clicksync: "When the song goes like uhhh \"tung\" you gotta do a offsync click",
     Bullshit: "If you know you know :emoji9:",
+    Dog: "The harbinger of doom and despair.",
     "Frame Perfects": "Levels with clicks that require less then 17ms of error to pull off.",
     Duals: "The worst gamemode.",
     Memory: "The worst gameplay.",
