@@ -57,7 +57,7 @@ export default {
                         >
                             <button @click="selected = i">
                                 <span class="rank">
-                                    <template v-if="i + 1 <= 150">
+                                    <template v-if="i + 1 <= 75">
                                         #{{ i + 1 }}
                                     </template>
                                     <template v-else>
