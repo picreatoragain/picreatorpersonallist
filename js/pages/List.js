@@ -61,7 +61,7 @@ export default {
                                         #{{ i + 1 }}
                                     </template>
                                     <template v-else>
-                                        Legacy
+                                        LG
                                     </template>
                                 </span>
 
